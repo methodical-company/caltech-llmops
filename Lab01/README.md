@@ -1,12 +1,11 @@
 # LLMOps Lab 01 - README
 
 ## Objective
-The objective of this lab is to provide students with hands-on experience in managing and operationalizing Large Language Models (LLMs) using **GCP Colab Enterprise**. This lab will guide you through deploying, fine-tuning, and monitoring LLMs while balancing cost, performance, and responsible AI practices. Specifically, we will focus on fine-tuning models efficiently using **Low-Rank Adaptation (LORA)** and how to optimize the operational aspects of LLMs for real-world applications.
+The objective of this lab is to provide students with hands-on experience in managing and operationalizing Large Language Models (LLMs). We will be using **GCP Colab Enterprise** but this will work on any platform with GCP access. This lab will guide you through using and then fine-tuning with custom data efficiently using **Low-Rank Adaptation (LORA)** and how to optimize the operational aspects of LLMs for real-world applications.
 
-By the end of this lab, students will:
-- Understand how to deploy and fine-tune LLMs on GCP.
+By the end of this lab, you will:
+- Understand how to fine-tune LLMs.
 - Learn to monitor resource utilization, performance, and costs.
-- Be familiar with responsible AI practices in the context of LLMs.
 
 ## GCP Colab Enterprise Runtime Configuration
 
@@ -48,23 +47,8 @@ However, remember that **fine-tuning** should only be performed when necessary, 
 
 The lab consists of the following key sections:
 
-1. **Introduction to LLMOps**  
-   Learn the operational challenges of deploying and maintaining large language models and how to address them using GCP.
 
-2. **Model Deployment on GCP**  
-   Deploy a pre-trained LLM on GCP Colab Enterprise, configure the environment, and ensure optimal performance using the NVIDIA L4 GPUs.
 
-3. **Fine-tuning with LORA**  
-   Use the LORA method to fine-tune your model for specific tasks. This section includes practical steps for reducing resource consumption and training time.
-
-4. **Monitoring and Alerts**  
-   Set up monitoring systems to track GPU and CPU utilization, disk space, and performance metrics such as latency and accuracy. Implement alert systems to ensure model performance remains within acceptable thresholds.
-
-5. **Cost and Resource Management**  
-   Learn techniques to monitor and manage the cost of running LLMs at scale, using GCP's built-in cost management tools.
-
-6. **Responsible AI**  
-   Understand responsible AI principles in model deployments, including ethical considerations, bias detection, and fairness evaluation. Learn how to adjust model outputs to adhere to responsible AI guidelines.
 
 ## Expanding the Exercise
 
