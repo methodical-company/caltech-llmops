@@ -7,6 +7,13 @@ By the end of this lab, you will:
 - Understand how to fine-tune LLMs.
 - Learn to monitor resource utilization, performance, and costs.
 
+
+## Prerequisites
+
+- Basic knowledge of Python programming and Jupyter notebooks
+- Understanding of AI/ML concepts, particularly large language models (LLMs)
+- Access to **GCP Colab Enterprise** (recommended)
+
 ## GCP Colab Enterprise Runtime Configuration
 
 This lab is configured to run on **GCP Colab Enterprise** with the following runtime settings:
@@ -47,8 +54,14 @@ However, remember that **fine-tuning** should only be performed when necessary, 
 
 The lab consists of the following key sections:
 
-
-
+1. Getting Setup with tools and data
+2. Loading a Foundational Model
+3. Running the Base Foundational Model
+4. Tokanize the Data
+5. Setup Lora
+6. Customizing Training Arugments
+7. Train the Model
+8. Test the fine tuned model
 
 ## Expanding the Exercise
 
@@ -69,11 +82,7 @@ Here are some suggestions on how to expand your learning:
 5. **Explore Different Cloud Platforms**:  
    Deploy the model on other cloud platforms like AWS or Azure and compare the operational metrics, including cost, scalability, and ease of use.
 
-## Prerequisites
 
-- Basic knowledge of Python programming and Jupyter notebooks
-- Understanding of AI/ML concepts, particularly large language models (LLMs)
-- Access to **GCP Colab Enterprise** (recommended)
 
 ## Quiz
 
