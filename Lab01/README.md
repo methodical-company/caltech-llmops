@@ -36,19 +36,13 @@ However, remember that **fine-tuning** should only be performed when necessary, 
 
 ## Getting Started
 
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/your-repo/LLMOps-Lab.git
-    cd LLMOps-Lab
-    ```
-2. **Install the necessary dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. **Open the Jupyter notebook in GCP Colab Enterprise**:
-    ```bash
-    jupyter notebook llmops_lab.ipynb
-    ```
+1. open Collab Enterprise. Likely you can get some free credits and [try it out](https://cloud.google.com/colab/pricing)
+2. open the console https://console.cloud.google.com/vertex-ai/colab/notebooks
+3. Import from URL and then select this url
+   ```
+   https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/Lab01_clean.ipynb
+   ```
+   
 
 ## Lab Structure
 
