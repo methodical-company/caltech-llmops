@@ -40,14 +40,18 @@ For this lab, we will use **Low-Rank Adaptation (LORA)** as a fine-tuning techni
 
 However, remember that **fine-tuning** should only be performed when necessary, as over-tuning models can result in diminishing returns, excessive resource usage, and increased costs.
 
-## Getting Started
+## Step by Step
 
 1. open Collab Enterprise. Likely you can get some free credits and [try it out](https://cloud.google.com/colab/pricing)
 2. open the console https://console.cloud.google.com/vertex-ai/colab/notebooks
 3. Import from URL and then select this url
-   ```
-   https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/Lab01_clean.ipynb
-   ```
+   ```https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/Lab01_Step1.ipynb   ```
+4. Run through Steps. Once it gets to `.train()` you can let it run (it will take awhile) and add a new notebook for Step2:
+   ```https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/Lab01_Step2.ipynb ```
+5. Run troug Steps until completion.
+6. (optionally) later on if Step1 has finished you can test it with Step3:
+   ```https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/test_Lab01clean_Step3_optional.ipynb```
+
    
 
 ## Lab Structure
