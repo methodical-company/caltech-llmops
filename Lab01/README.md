@@ -46,10 +46,10 @@ However, remember that **fine-tuning** should only be performed when necessary, 
 2. open the console https://console.cloud.google.com/vertex-ai/colab/notebooks
 3. Import from URL and then select this url
    ```https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/Lab01_Step1.ipynb   ```
-4. Run through Steps. Once it gets to `.train()` you can let it run (it will take awhile) and add a new notebook for Step2:
+4. Run through Steps. Once it gets to `.train()` you can let it run (it will take awhile) and add a new notebook for Step2 (Import -> URL):
    ```https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/Lab01_Step2.ipynb ```
 5. Run troug Steps until completion.
-6. (optionally) later on if Step1 has finished you can test it with Step3:
+6. (optionally) later on if Step1 has finished you can test it with Step3 (Import -> URL):
    ```https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/test_Lab01clean_Step3_optional.ipynb```
 
    
