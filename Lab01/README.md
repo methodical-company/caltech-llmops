@@ -64,8 +64,9 @@ The lab consists of the following key sections:
 4. Tokanize the Data
 5. Setup Lora
 6. Customizing Training Arugments
-7. Train the Model
-8. Test the fine tuned model
+7. Train the Model (two variations Step 1 and Step 2)
+8. Save the model to disc for easy versioning and deployment
+9. Test the fine tuned model
 
 ## Expanding the Exercise
 
@@ -110,11 +111,11 @@ At the end of the lab, you can test your knowledge with the following quiz:
     - c) g2-standard-24
     - d) g4-standard-24
 
-4. How long does the fine-tuning process take per training run?
-    - a) 30 minutes
-    - b) 1 hour
-    - c) 2 hours
-    - d) 4 hours
+4. When should you fine tune?
+    - a) Always.
+    - b) Ony if foundational model does not do the job.
+    - c) when you want a smaller model.
+    - d) Only when testing.
 
 5. What GPU is used in this lab's runtime configuration?
     - a) NVIDIA Tesla V100
