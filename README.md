@@ -1,23 +1,29 @@
 # caltech-llmops
 Class at Caltech on LLMOps by Brian Ray
 
-## Lab 01
+## Lab 01: Implement LLMS
 
-This lab provides hands-on experience with using and then fine-tuning a large language models (LLM) using GCP Colab Enterprise, with a focus on optimizing resources and costs through LORA.
+This lab provides hands-on experience implementing LLMs. The example is Natural Language to SQL with two different pre-built Models
+
+We will kick off a fine-tuning for a large language models (LLM) using GCP Colab Enterprise, using LORA. 
 
 [Lab 01](./Lab01)
 
+## Lab 02: Model Trials
 
-## Lab 02
-
-This lab provides step-by-step instructions for deploying a custom fine-tuned Llama model on Google Vertex AI with auto-scaling, testing the endpoint, and enabling monitoring and logging.
+This lab we take 2 different model implementation and make them comparable and measure performance in batch.
 
 [Lab 02](./Lab02)
 
+## Lab 03: Pushing Models into Produciton
 
-## Lab 03
+This lab will show 2 different ways to push models into production.
+
+[Lab 03](./Lab03)
+
+## Lab 04: App Dev for LLMOps
 
 This lab puts it all together walks you through how to create a simple test application to interact with your deployed model. 
 
-[Lab 03](./Lab03)
+[Lab 04](./Lab04)
 
