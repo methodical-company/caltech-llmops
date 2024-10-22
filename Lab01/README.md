@@ -40,14 +40,18 @@ For this lab, we will use **Low-Rank Adaptation (LORA)** as a fine-tuning techni
 
 However, remember that **fine-tuning** should only be performed when necessary, as over-tuning models can result in diminishing returns, excessive resource usage, and increased costs.
 
-## Getting Started
+## Step by Step
 
 1. open Collab Enterprise. Likely you can get some free credits and [try it out](https://cloud.google.com/colab/pricing)
 2. open the console https://console.cloud.google.com/vertex-ai/colab/notebooks
 3. Import from URL and then select this url
-   ```
-   https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/Lab01_clean.ipynb
-   ```
+   ```https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/Lab01_Step1.ipynb   ```
+4. Run through Steps. Once it gets to `.train()` you can let it run (it will take awhile) and add a new notebook for Step2 (Import -> URL):
+   ```https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/Lab01_Step2.ipynb ```
+5. Run troug Steps until completion.
+6. (optionally) later on if Step1 has finished you can test it with Step3 (Import -> URL):
+   ```https://raw.githubusercontent.com/methodical-company/caltech-llmops/refs/heads/main/Lab01/test_Lab01clean_Step3_optional.ipynb```
+
    
 
 ## Lab Structure
@@ -60,8 +64,9 @@ The lab consists of the following key sections:
 4. Tokanize the Data
 5. Setup Lora
 6. Customizing Training Arugments
-7. Train the Model
-8. Test the fine tuned model
+7. Train the Model (two variations Step 1 and Step 2)
+8. Save the model to disc for easy versioning and deployment
+9. Test the fine tuned model
 
 ## Expanding the Exercise
 
@@ -106,11 +111,11 @@ At the end of the lab, you can test your knowledge with the following quiz:
     - c) g2-standard-24
     - d) g4-standard-24
 
-4. How long does the fine-tuning process take per training run?
-    - a) 30 minutes
-    - b) 1 hour
-    - c) 2 hours
-    - d) 4 hours
+4. When should you fine tune?
+    - a) Always.
+    - b) Ony if foundational model does not do the job.
+    - c) when you want a smaller model.
+    - d) Only when testing.
 
 5. What GPU is used in this lab's runtime configuration?
     - a) NVIDIA Tesla V100
