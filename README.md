@@ -6,7 +6,9 @@ How to run these labs:
 1. Navigate to Colab Enterprise https://console.cloud.google.com/vertex-ai/colab/notebooks
 1. Navigate to the notebooks in this repository for example https://github.com/methodical-company/caltech-llmops/blob/main/Lab01/Lab01_Step1.ipynb
 1. Get the Raw link <img width="337" alt="link" src="https://github.com/user-attachments/assets/233100d7-e176-482c-ad90-e5674efa88e0">
-1. go back to collab and hit the upload button, click url, paste the url, then you are all set.
+1. go back to collab and hit the upload button, click url, paste the url.
+1. Pick a runtime <img width="460" alt="runtime 1" src="https://github.com/user-attachments/assets/434d1471-d03c-4896-b9d7-5abddc8866d8">
+1. pick from template <img width="579" alt="runtime 2" src="https://github.com/user-attachments/assets/376dc634-6413-4c7a-9e1a-797df5bfe8c4">
 
 
 ## Lab 01: Implement LLMS
