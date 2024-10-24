@@ -46,7 +46,7 @@ else:
 
             # Process the response.
             if response.status_code == 200:
-                assistant_reply = response.json().get("reply", "No response received.")
+                assistant_reply = response.text
             else:
                 assistant_reply = "Error: Could not get a response from the CloudRun endpoint."
 

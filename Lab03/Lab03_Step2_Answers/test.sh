@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-url="http://127.0.0.1:5000/api/chat"
+url="https://lab03-2-brianmethodicalcompany-240830225929.us-central1.run.app/api/chat"
 
 
 # Define the input message in JSON format
