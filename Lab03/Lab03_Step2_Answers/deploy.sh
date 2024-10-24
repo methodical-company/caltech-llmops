@@ -1,4 +1,3 @@
-%%bash 
 gcloud init --skip-diagnostics
 gcloud config set project caltech-439204
 gcloud config set compute/region us-central1

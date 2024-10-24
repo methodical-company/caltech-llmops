@@ -1,9 +1,13 @@
+from flask import Flask, request, render_template
+from utils import chat
 import os
-
-from flask import Flask
 
 app = Flask(__name__)
 
+MODEL = "crumb/nano-mistral"
+
+# to warm up the model
+chat("hi", MODEL)
 
 @app.route("/")
 def hello_world():
@@ -11,6 +15,21 @@ def hello_world():
     name = os.environ.get("NAME", "World")
     return f"Hello {name}!"
 
+    
+# Handle POST requests to dialo endpoint
+@app.route("/api/chat", methods=["POST"])
+def dialo_chatbot():
+    # Get the input message from the request
+    input_message = request.json["message"]
+    print("Received message:", input_message)
+    
+    # Return response
+    response = chat(input_message, MODEL)
+    response = response.get("response", "")  # Extract the "response" value
+    print("Generated response:", response)
 
+    return response
+
+# Run the Flask application
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    app.run(port=5000)
