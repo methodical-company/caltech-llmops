@@ -1,8 +1,6 @@
 # 💬 Chatbot template
 
-A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
-
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://chatbot-template.streamlit.app/)
+A simple Streamlit app that shows how to build a chatbot using VertxAI.
 
 ### How to run it on your own machine
 
@@ -17,3 +15,9 @@ A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
    ```
    $ streamlit run streamlit_app.py
    ```
+
+### How to deploy on VertexAI
+
+```
+gcloud builds submit --tag gcr.io/<PROJECT_ID>/<SOME_PROJECT_NAME> --timeout=2h
+```

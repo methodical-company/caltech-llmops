@@ -1,6 +1,130 @@
 import streamlit as st
 from openai import OpenAI
 
+PROJECT_ID = "caltech-439204"  # Replace with your project ID
+REGION = "us-central1"  # Replace with your region
+
+# Use the environment variable if the user doesn't provide Project ID.
+import os
+
+import vertexai
+
+# PROJECT_ID = "[your-project-id]"  # @param {type: "string", placeholder: "[your-project-id]" isTemplate: true}
+# if not PROJECT_ID or PROJECT_ID == "[your-project-id]":
+#     PROJECT_ID = str(os.environ.get("GOOGLE_CLOUD_PROJECT"))
+
+LOCATION = os.environ.get("GOOGLE_CLOUD_REGION", "us-central1")
+
+vertexai.init(project=PROJECT_ID, location=LOCATION)
+
+
+from vertexai.generative_models import (
+    GenerationConfig,
+    GenerativeModel,
+    HarmBlockThreshold,
+    HarmCategory,
+    Part,
+)
+
+MODEL_ID = "gemini-1.5-pro-002"  # @param {type:"string"}
+
+model = GenerativeModel(MODEL_ID)
+
+# Load a example model with system instructions
+example_model = GenerativeModel(
+    MODEL_ID,
+    system_instruction=[
+        "You are a helpful language translator.",
+        "Your mission is to translate text in English to French.",
+    ],
+)
+
+# Set model parameters
+generation_config = GenerationConfig(
+    temperature=0.9,
+    top_p=1.0,
+    top_k=32,
+    candidate_count=1,
+    max_output_tokens=8192,
+)
+
+# Set safety settings
+safety_settings = {
+    HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+    HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+    HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+    HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+}
+
+prompt = """
+  User input: I like bagels.
+  Answer:
+"""
+
+# Set contents to send to the model
+contents = [prompt]
+
+# Counts tokens
+print(example_model.count_tokens(contents))
+
+# Prompt the model to generate content
+response = example_model.generate_content(
+    contents,
+    generation_config=generation_config,
+    safety_settings=safety_settings,
+)
+
+# Print the model response
+print(f"\nAnswer:\n{response.text}")
+print(f'\nUsage metadata:\n{response.to_dict().get("usage_metadata")}')
+print(f"\nFinish reason:\n{response.candidates[0].finish_reason}")
+print(f"\nSafety settings:\n{response.candidates[0].safety_ratings}")
+
+# @markdown Define input message in conversation and get output message from model.
+
+message_role = "user"  # @param {type: "string"}
+message_content = "What is a car?"  # @param {type: "string"}
+
+messages = [
+    {
+        "role": message_role,
+        "content": message_content,
+    }
+]
+print("Conversation [turn 1]:", messages)
+
+response = client.chat.completions.create(
+    model=LLAMA3_405B_INSTRUCT,
+    messages=messages,
+)
+print("Response:", response)
+
+messages.append(
+    {
+        "role": response.choices[0].message.role,
+        "content": response.choices[0].message.content,
+    }
+)
+print("Conversation [turn 2]:", messages)
+
+# @markdown Use Llama Guard to classify the conversation: safe versus unsafe.
+# @markdown Classification is performed on the last turn of the conversation.
+# @markdown If the content is safe, the model will return `safe`. If the content is unsafe, the model will return `unsafe` and additionally the list of offending categories as a comma-separated list in a new line.
+# @markdown Set `"@requestFormat": "chatCompletions"` to use the OpenAI chat completions format.
+
+instances = [
+    {
+        "messages": messages,
+        "@requestFormat": "chatCompletions",
+    },
+]
+response = endpoints["vllm_gpu"].predict(instances=instances)
+
+prediction = response.predictions[0]
+print(prediction)
+print("Llama Guard prediction:", prediction["choices"][0]["message"]["content"])
+
+
 # Show title and description.
 st.title("💬 Chatbot")
 st.write(
